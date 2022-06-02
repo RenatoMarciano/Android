@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Primeiro Projeto</string>
+    <string name="bem_vindo_martemusic">Bem vindo MarteMusic</string>
+    <string name="todo">TODO</string>
+    <string name="log_in">Log in</string>
+    <string name="sig_in">Sig in</string>
+    <string name="name">Name</string>
+    <string name="senha">Senha</string>
+    <string name="login">Log In</string>
+    <string name="sigin">Sig In</string>
+    <string name="todo1">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="nameTela2">Name</string>
+    <string name="descricao">Descricao</string>
+    <string name="responsavel">Responsavel</string>
+    <string name="data">Data</string>
+    <string name="em_andamento">Em andamento</string>
+    <string name="salvar">Salvar</string>
+</resources>
