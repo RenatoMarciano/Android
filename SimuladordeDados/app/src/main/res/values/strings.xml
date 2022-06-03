@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SimuladordeDados</string>
+    <string name="gerar_sequencia">Gerar Sequencia</string>
+    <string name="gerar_sequencia_d12">Gerar Sequencia D12</string>
+    <string name="gerar_sequencia_d20">Gerar Sequencia D20</string>
+    <string name="gerar_sequencia_d6">Gerar Sequencia D6</string>
+</resources>
