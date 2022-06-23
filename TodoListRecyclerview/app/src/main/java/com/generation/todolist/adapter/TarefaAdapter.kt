@@ -3,10 +3,14 @@ package com.generation.todolist.Adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.generation.todolist.MainViewModel
 import com.generation.todolist.Model.Tarefa
 import com.generation.todolist.databinding.CardLayoutBinding
 
-class TarefaAdapter : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
+class TarefaAdapter (
+    val taskClickListener: TaskClickListener,
+    val mainViewModel: MainViewModel
+        ) : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
 
     private var listTarefa = emptyList<Tarefa>()
 
@@ -28,18 +32,26 @@ class TarefaAdapter : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>() {
         holder.binding.switchAtivo.isChecked = tarefa.status
         holder.binding.textCategoria.text = tarefa.categoria.descricao
 
+        holder.itemView.setOnClickListener{
+            taskClickListener.onTaskClickListener(tarefa)
+        }
+
+        holder.binding.switchAtivo
+            .setOnCheckedChangeListener { compoundButton, ativo ->
+                tarefa.status = ativo
+                mainViewModel.updateTarefa(tarefa)
+            }
     }
 
     override fun getItemCount(): Int {
         return listTarefa.size
     }
 
+    //sortedBy { it.id } A lista é atualiza e permanece na mesma ordem Crescente que estava
+    //sortedByDescending { it.id } A oredem fica decrescente.
     fun setList(list: List<Tarefa>){
-
-        listTarefa = list
-
+        listTarefa = list.sortedByDescending { it.id }
         notifyDataSetChanged()
-
     }
 
 
