@@ -14,8 +14,10 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
         : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        return UserViewHolder(CardLayoutBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false
+        return UserViewHolder(
+            CardLayoutBinding.inflate(
+            LayoutInflater.from(
+                parent.context), parent, false
         ))
     }
 
