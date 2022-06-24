@@ -84,9 +84,7 @@ class FormFragment : Fragment(), TimerPickerListener {
                     override fun onNothingSelected(parent: AdapterView<*>?) {
                         TODO("Not yet implemented")
                     }
-
                 }
-
         }
     }
 

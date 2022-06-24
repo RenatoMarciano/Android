@@ -3,10 +3,7 @@ package com.generation.todolist.api
 import com.generation.todolist.Model.Categoria
 import com.generation.todolist.Model.Tarefa
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -24,5 +21,10 @@ interface ApiService {
     @PUT("tarefa")
     suspend fun updateTarefa(
         @Body tarefa: Tarefa
+    ): Response<Tarefa>
+
+    @DELETE("tarefa/{id}")
+    suspend fun deleteTarefa(
+        @Path("id") id: Long
     ): Response<Tarefa>
 }
